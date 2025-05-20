@@ -1,9 +1,6 @@
-﻿namespace team2_fitness_center;
+namespace team2_fitness_center;
 
-class Members
+public class Members
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello, World!");
-    }
+    
 }
