@@ -10,10 +10,17 @@ public class SingleClubMembers : Members
         Club = club;
         IsCheckedIn = isCheckedIn;
     }
-    public override CheckIn()
+    public override CheckIn(Club club)
     {
-        // throw exception if it is not their club
+        // throws an exception if it is not their club
+        try
+        {
+            Club = club;
+            IsCheckedIn = true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("You are not a member of this club");
+        }
     }
-    
-    // need to add constructors
 }

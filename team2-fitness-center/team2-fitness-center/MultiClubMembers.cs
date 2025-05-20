@@ -13,9 +13,8 @@ public class MultiClubMembers : Members
 
     public override CheckIn()
     {
-        // add membership points
-        // maybe just add one?
+        MembershipPoints = 0;
+        MembershipPoints += 1;
+        IsCheckedIn = true;
     }
-    
-    // need to add constructors
 }

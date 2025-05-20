@@ -4,13 +4,11 @@ public class Club
 {
     private string Name;
     private string Address;
+    // may need to add more variables as needed
 
     public Club(string name, string address)
     {
         Name = name;
         Address = address;
     }
-    // may need to add more
-    
-    // need to add constructors
 }
