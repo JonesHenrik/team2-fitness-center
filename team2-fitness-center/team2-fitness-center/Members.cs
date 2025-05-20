@@ -1,6 +1,6 @@
 ﻿namespace team2_fitness_center;
 
-class Program
+class Members
 {
     static void Main(string[] args)
     {
