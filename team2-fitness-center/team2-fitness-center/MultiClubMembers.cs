@@ -1,6 +1,7 @@
 namespace team2_fitness_center;
 
-public class MultiClubMembers : Members
+// Switch back to Members
+public class MultiClubMembers : MembersClone
 {
     private int MembershipPoints;
     private bool IsCheckedIn;
@@ -11,9 +12,9 @@ public class MultiClubMembers : Members
         IsCheckedIn = isCheckedIn;
     }
 
-    public override CheckIn()
+    public override void CheckIn(Club club)
     {
-        MembershipPoints = 0;
+        // throw new NotImplementedException();
         MembershipPoints += 1;
         IsCheckedIn = true;
     }

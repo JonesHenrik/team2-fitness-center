@@ -1,6 +1,7 @@
 namespace team2_fitness_center;
 
-public class SingleClubMembers : Members
+// switch back to Members
+public abstract class SingleClubMembers : MembersClone
 {
     private Club Club;
     private bool IsCheckedIn;
@@ -10,7 +11,7 @@ public class SingleClubMembers : Members
         Club = club;
         IsCheckedIn = isCheckedIn;
     }
-    public override CheckIn(Club club)
+    public override void CheckIn(Club club)
     {
         // throws an exception if it is not their club
         try
