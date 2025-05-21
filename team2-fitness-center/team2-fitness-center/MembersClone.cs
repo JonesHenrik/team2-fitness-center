@@ -41,6 +41,24 @@ public abstract class MembersClone : IEnumerable
         }
     }
 
+    public void GenerateBill(MembersClone member)
+    {
+        if (member is SingleClubMembers)
+        {
+            Console.WriteLine($"------ Member Billing Information ------");
+            Console.WriteLine("Membership Type: Single Club Member");
+            Console.WriteLine("Cost: $15");
+        }
+        else
+        {
+            Console.WriteLine($"------ Member Billing Information ------");
+            Console.WriteLine("Membership Type: Multi-Club Member");
+            Console.WriteLine("Cost: $30");  
+            // issue with constructor??
+            Console.WriteLine($"Membership Points: {member.MembershipPoints}"); 
+        }
+    }
+
     public IEnumerator GetEnumerator()
     {
         throw new NotImplementedException();
