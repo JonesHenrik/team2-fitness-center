@@ -1,7 +1,6 @@
 namespace team2_fitness_center;
 
-// switch back to Members
-public abstract class SingleClubMembers : MembersClone
+public abstract class SingleClubMembers : Members
 {
     private Club Club;
     private bool IsCheckedIn;

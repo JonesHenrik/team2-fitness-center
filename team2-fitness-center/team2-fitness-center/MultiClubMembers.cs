@@ -1,7 +1,6 @@
 namespace team2_fitness_center;
 
-// Switch back to Members
-public class MultiClubMembers : MembersClone
+public class MultiClubMembers : Members
 {
     private int MembershipPoints;
     private bool IsCheckedIn;
