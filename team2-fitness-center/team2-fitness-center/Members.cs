@@ -1,6 +1,10 @@
 namespace team2_fitness_center;
 
-public class Members
+public abstract class Members
 {
-    
+    private int MemberID;
+    private string Name;
+
+    public abstract void CheckIn();
 }
+
