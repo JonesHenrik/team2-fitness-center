@@ -4,7 +4,9 @@ public abstract class Members
 {
     private int MemberID;
     private string Name;
-
-    public abstract void CheckIn();
+    
+    public abstract void CheckIn(Club club);
 }
+
+
 
