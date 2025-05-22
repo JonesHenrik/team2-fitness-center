@@ -5,7 +5,7 @@ public class MultiClubMembers : Members
     private int MembershipPoints;
     private bool IsCheckedIn;
     
-    public MultiClubMembers(int membershipPoints, bool isCheckedIn)
+    public MultiClubMembers(int membershipPoints, bool isCheckedIn, string name, int memberID) : base(membershipPoints, name)
     {
         MembershipPoints = membershipPoints;
         IsCheckedIn = isCheckedIn;

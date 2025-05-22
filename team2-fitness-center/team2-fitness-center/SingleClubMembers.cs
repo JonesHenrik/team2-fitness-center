@@ -1,11 +1,11 @@
 namespace team2_fitness_center;
 
-public abstract class SingleClubMembers : Members
+public class SingleClubMembers : Members
 {
     private Club Club;
     private bool IsCheckedIn;
 
-    public SingleClubMembers(Club club, bool isCheckedIn)
+    public SingleClubMembers(Club club, bool isCheckedIn, string name, int memberID) : base(memberID, name)
     {
         Club = club;
         IsCheckedIn = isCheckedIn;

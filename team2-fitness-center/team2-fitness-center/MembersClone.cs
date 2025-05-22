@@ -55,7 +55,7 @@ public abstract class MembersClone : IEnumerable
             Console.WriteLine("Membership Type: Multi-Club Member");
             Console.WriteLine("Cost: $30");  
             // issue with constructor??
-            Console.WriteLine($"Membership Points: {member.MembershipPoints}"); 
+            //Console.WriteLine($"Membership Points: {member.MembershipPoints}"); 
         }
     }
 

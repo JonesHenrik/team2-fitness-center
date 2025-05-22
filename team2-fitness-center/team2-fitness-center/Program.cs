@@ -11,6 +11,10 @@ class Program
 {
     static void Main()
     {
+        Console.WriteLine("Welcome to Fitness Center App!");
+        // Prompt user for add, remove, or display member
+        
+        
         // make 4 clubs
         List<Club> clubs = new List<Club>
         {
@@ -19,6 +23,13 @@ class Program
             new Club("Detroit Boxing Gym", "293 GrandCircus Blvd"),
             new Club("Elevate Fitness", "3929 E Jefferson Blvd"),
         };
+        
+        List<Members> members = new List<Members>();
+        members.Add(new MultiClubMembers(1, false, "Brock", 52790));
+        members.Add(new SingleClubMembers(clubs[0], false, "Kyle", 25763));
+        members.Add(new SingleClubMembers(clubs[1], false, "Brad", 55532));
+        
+        Console.WriteLine("Would you like to add a member?");
 
         // ask for name and if multi/single club member
         Console.Write("Enter member name: ");
@@ -29,10 +40,9 @@ class Program
 
         
         
-        
         if (response == "y")
         {
-            MultiClubMembers multiMember = new MultiClubMembers(1, false);
+            MultiClubMembers multiMember = new MultiClubMembers(1, false, "Chad", 35542);
             Console.WriteLine($"Added Multi-Club Member: {name}");
         }
         else
@@ -48,8 +58,9 @@ class Program
             int clubChoice = int.Parse(Console.ReadLine());
             Club selectedClub = clubs[clubChoice - 1];
             
-            SingleClubMembers singleMember = new SingleClubMembers(selectedClub, false);
+            Members singleMember = new SingleClubMembers(selectedClub, false, "Jake",96478);
             Console.WriteLine($"Added Single-Club Member: {name} at {selectedClub}");
         }
+        
     }
 }
