@@ -29,8 +29,18 @@ class Program
         members.Add(new SingleClubMembers(clubs[0], false, "Kyle", 25763));
         members.Add(new SingleClubMembers(clubs[1], false, "Brad", 55532));
         
-        Console.WriteLine("Would you like to add a member?");
-
+        Console.WriteLine("Would you like to add a member? (y/n): ");
+        string isAddingMember = Console.ReadLine();
+        if (isAddingMember == "y")
+        {
+            Console.WriteLine("Please enter a name: ");
+            string newMemberName = Console.ReadLine();
+            Console.WriteLine("Do you want to be a multiclub member? (y/n): ");
+            string isMulticlubMember = Console.ReadLine();
+            
+        }
+        
+        
         // ask for name and if multi/single club member
         Console.Write("Enter member name: ");
         string name = Console.ReadLine();
