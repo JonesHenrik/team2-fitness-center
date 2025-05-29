@@ -18,59 +18,92 @@ class Program
         // make 4 clubs
         List<Club> clubs = new List<Club>
         {
-            new Club("LA Fitness", "2846 Woodward"),
-            new Club("Powerhouse", "736 Mack Blvd"),
-            new Club("Detroit Boxing Gym", "293 GrandCircus Blvd"),
-            new Club("Elevate Fitness", "3929 E Jefferson Blvd"),
+           // new Club("LA Fitness", "2846 Woodward"),
+           // new Club("Powerhouse", "736 Mack Blvd"),
+           // new Club("Detroit Boxing Gym", "293 GrandCircus Blvd"),
+           // new Club("Elevate Fitness", "3929 E Jefferson Blvd"),
         };
         
         List<Members> members = new List<Members>();
-        members.Add(new MultiClubMembers(1, false, "Brock", 52790));
-        members.Add(new SingleClubMembers(clubs[0], false, "Kyle", 25763));
-        members.Add(new SingleClubMembers(clubs[1], false, "Brad", 55532));
+        //members.Add(new MultiClubMembers(1, false, "Brock", 52790));
+        //members.Add(new SingleClubMembers(clubs[0], false, "Kyle", 25763));
+        //members.Add(new SingleClubMembers(clubs[1], false, "Brad", 55532));
+
+        Main main = new Main();
         
         Console.WriteLine("Would you like to add a member? (y/n): ");
         string isAddingMember = Console.ReadLine();
-        if (isAddingMember == "y")
+        // handle incorrect input
+        isAddingMember = isAddingMember.ToLower().Replace(" ", "");
+        bool isValid = false;
+        do
         {
-            Console.WriteLine("Please enter a name: ");
-            string newMemberName = Console.ReadLine();
-            Console.WriteLine("Do you want to be a multiclub member? (y/n): ");
-            string isMulticlubMember = Console.ReadLine();
-            
-        }
+            if (isAddingMember == "y")
+            {
+                isValid = false;
+                Console.WriteLine("Please enter your name: ");
+                string newName = Console.ReadLine();
+                
+                Random rng = new Random();
+                
+                // Calling from main class
+                Members addedMember = main.MultiOrSingleMember(newName, rng.Next(Int32.MaxValue), clubs);
+                members.Add(addedMember);
+                
+                
+               // Members newMember = new Members(rng.Next(Int32.MaxValue), newName);
+            } else if (isAddingMember == "n")
+            {
+                isValid = false;
+            }
+            else
+            {
+                Console.WriteLine("Please enter either 'y' or 'n'!");
+                isValid = true;
+            }
+        } while (isValid);
         
-        
-        // ask for name and if multi/single club member
-        Console.Write("Enter member name: ");
-        string name = Console.ReadLine();
-        
-        Console.Write("Is this a multi-club member? (y/n): ");
-        string response = Console.ReadLine().ToLower();
+        // Would you like to display list of members?
+        Console.WriteLine("Would you like to display our list of Members? (y/n): ");
+        bool isValidDisplay = false;
+
+        do
+        {
+            string wantsDisplay = Console.ReadLine();
+            wantsDisplay = wantsDisplay.ToLower().Replace(" ", "");
+
+            if (wantsDisplay == "y")
+            {
+                // if yes, display members
+                isValidDisplay = false;
+                main.DisplayMembers(members);
+            }
+            else if (wantsDisplay == "n")
+            {
+                // if no, move on
+                isValidDisplay = false;
+            }
+            else
+            {
+                Console.WriteLine("Please enter either 'y' or 'n'!");
+                isValidDisplay = true;
+            }
+        } while (isValidDisplay);
+
 
         
         
-        if (response == "y")
-        {
-            MultiClubMembers multiMember = new MultiClubMembers(1, false, "Chad", 35542);
-            Console.WriteLine($"Added Multi-Club Member: {name}");
-        }
-        else
-        {
-            // give club choices then choose the club
-            
-            Console.WriteLine("Choose a club:");
-            for (int i = 0; i < clubs.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {clubs[i]}");
-            }
-            
-            int clubChoice = int.Parse(Console.ReadLine());
-            Club selectedClub = clubs[clubChoice - 1];
-            
-            Members singleMember = new SingleClubMembers(selectedClub, false, "Jake",96478);
-            Console.WriteLine($"Added Single-Club Member: {name} at {selectedClub}");
-        }
         
+        
+        
+        // Would you like to remove a member from the list?
+        Members removeMember = main.MemberToRemove(members);
+        members.Remove(removeMember);
+        
+        
+        // Would you like to check in a member at a particular club
+        
+        
+        // Select a member to generate a bill of fees w Membershop points if MultiClub
     }
 }

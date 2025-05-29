@@ -1,15 +1,9 @@
 namespace team2_fitness_center;
 
-public class MultiClubMembers : Members
+public class MultiClubMembers(int memberId, string name) : Members
 {
-    private int MembershipPoints;
-    private bool IsCheckedIn;
-    
-    public MultiClubMembers(int membershipPoints, bool isCheckedIn, string name, int memberID) : base(membershipPoints, name)
-    {
-        MembershipPoints = membershipPoints;
-        IsCheckedIn = isCheckedIn;
-    }
+    public int MembershipPoints { get; set; }
+    public bool IsCheckedIn { get; set; }
 
     public override void CheckIn(Club club)
     {

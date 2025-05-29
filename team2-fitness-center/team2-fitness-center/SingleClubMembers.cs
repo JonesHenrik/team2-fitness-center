@@ -2,14 +2,14 @@ namespace team2_fitness_center;
 
 public class SingleClubMembers : Members
 {
-    private Club Club;
-    private bool IsCheckedIn;
-
-    public SingleClubMembers(Club club, bool isCheckedIn, string name, int memberID) : base(memberID, name)
+    public SingleClubMembers(int memberId, string name, Club selectedClub, bool isCheckedIn)
     {
-        Club = club;
-        IsCheckedIn = isCheckedIn;
+        throw new NotImplementedException();
     }
+
+    public Club Club { get; set; }
+    public bool IsCheckedIn { get; set; }
+    
     public override void CheckIn(Club club)
     {
         // throws an exception if it is not their club
